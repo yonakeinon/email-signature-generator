@@ -3,16 +3,16 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      selectedTemplate: "", // Currently selected template
+      selectedTemplate: "", 
       userDetails: {
         fullName: "",
         email: "",
         phone: "",
         logo: "",
       },
-      templates: [], // Array of template names fetched from the backend
-      generatedSignature: "", // HTML version of the signature
-      plainTextSignature: "", // Plain text version of the signature
+      templates: [], 
+      generatedSignature: "", 
+      plainTextSignature: "", 
     };
   },
   methods: {
@@ -20,8 +20,8 @@ createApp({
       try {
         const response = await fetch("http://localhost:5000/api/templates");
         const data = await response.json();
-        this.templates = data.templates; // Fetch all templates
-        this.selectedTemplate = this.templates[0] || ""; // Default to the first template
+        this.templates = data.templates; 
+        this.selectedTemplate = this.templates[0] || ""; 
       } catch (error) {
         console.error("Error fetching templates:", error);
       }

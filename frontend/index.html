@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Email Signature Generator</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
   <div id="app" class="container">
     <h1>Email Signature Generator</h1>
 
-    <!-- Template Selection -->
+   
     <div class="template-list">
       <p>Choose a Template:</p>
       <div>
@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <!-- User Form -->
+   
     <form @submit.prevent="generateSignature" class="user-form">
       <div class="form-group">
         <label for="fullName">Full Name:</label>
@@ -48,7 +48,7 @@
       <button type="submit" class="generate-btn">Generate Signature</button>
     </form>
 
-    <!-- Signature Preview -->
+
     <div v-if="generatedSignature" class="signature-preview">
       <h2>Generated Signature (HTML):</h2>
       <div v-html="generatedSignature"></div>

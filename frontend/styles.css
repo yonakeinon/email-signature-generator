@@ -1,4 +1,4 @@
-/* General Page Styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -20,7 +20,7 @@ body {
     width: 100%;
   }
   
-  /* Template Selection Styling */
+ 
   .template-list {
     margin-bottom: 20px;
     text-align: center;

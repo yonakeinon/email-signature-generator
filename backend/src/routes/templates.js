@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
       return res.status(500).json({ error: "Failed to fetch templates." });
     }
 
-    const templates = files.map((file) => path.parse(file).name); // Extract template names
+    const templates = files.map((file) => path.parse(file).name); 
 
     res.json({ templates });
   });
