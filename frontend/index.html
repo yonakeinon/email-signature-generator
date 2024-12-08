@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Signature Generator</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+  <div id="app" class="container">
+    <h1>Email Signature Generator</h1>
+
+    <!-- Template Selection -->
+    <div class="template-list">
+      <p>Choose a Template:</p>
+      <div>
+        <span v-for="template in templates" :key="template" class="template-item">
+          <input 
+            type="radio" 
+            :id="template" 
+            :value="template" 
+            v-model="selectedTemplate" 
+          />
+          <label :for="template">{{ template }}</label>
+        </span>
+      </div>
+    </div>
+
+    <!-- User Form -->
+    <form @submit.prevent="generateSignature" class="user-form">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input id="fullName" type="text" v-model="userDetails.fullName" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input id="email" type="email" v-model="userDetails.email" required />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input id="phone" type="tel" v-model="userDetails.phone" required />
+      </div>
+      <div class="form-group">
+        <label for="logo">Logo URL:</label>
+        <input id="logo" type="url" v-model="userDetails.logo" />
+      </div>
+      <button type="submit" class="generate-btn">Generate Signature</button>
+    </form>
+
+    <!-- Signature Preview -->
+    <div v-if="generatedSignature" class="signature-preview">
+      <h2>Generated Signature (HTML):</h2>
+      <div v-html="generatedSignature"></div>
+    </div>
+
+    <div v-if="plainTextSignature" class="signature-preview">
+      <h2>Generated Signature (Plain Text):</h2>
+      <pre>{{ plainTextSignature }}</pre>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

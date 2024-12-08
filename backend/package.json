@@ -10,17 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "bull": "^4.16.4",
+    "cors": "^2.8.5",
     "ejs": "^3.1.10",
-    "express": "^4.21.1",
-    "redis": "^4.7.0"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.10.1",
-    "nodemon": "^3.1.7",
-    "typescript": "^5.7.2"
+    "express": "^4.21.2",
+    "node-fetch": "^2.7.0"
   }
 }
